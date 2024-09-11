@@ -2,9 +2,11 @@ function checkDigitsInName(name) {
     if(typeof name !== 'string'){
         return "Invalid Input";
     }
-    let digitsInStr = /\d/;
-    if(digitsInStr.test(name)){
-       return true;
-    }
+
+    for(const item of name){
+        if(!isNaN(item) && item !== ' '){
+            return true;
+        }
+    } 
     return false;
 }

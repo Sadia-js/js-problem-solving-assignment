@@ -2,7 +2,11 @@ function sendNotification(email) {
     if(typeof email !== 'string' || email.split('@').length !== 2){
         return "Invalid Email";
     }
-    let notification = email.split('@');
-    notification = notification[0] + ' sent you an email from ' + notification[1];
+    let separate = email.split('@');
+    let userName = separate[0];
+    let domainName = separate[1];
+
+    let notification = userName + ' sent you an email from ' + domainName;
     return notification;
 }
+
